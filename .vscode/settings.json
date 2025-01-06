@@ -1,6 +1,6 @@
 {
   "editor.fontFamily": "Consolas, 'Courier New', monospace",  
-  "editor.fontSize": 23, // Adjust the font size as needed
+  "editor.fontSize": 22, // Adjust the font size as needed
   "editor.lineHeight": 1.5, // Optional: Adjust line height
   "editor.fontLigatures": true, // Enable ligatures if supported by the font
 
