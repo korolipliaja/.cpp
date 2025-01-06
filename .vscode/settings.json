@@ -1,9 +1,12 @@
-{ 
-  "editor.fontFamily": "'Cascadia Mono', monospace",
-  "editor.fontSize": 21,
-  "editor.fontWeight": "normal",
-  "editor.fontLigatures": false,
-  "editor.fontVariations": false,
+{
+  "editor.fontFamily": "Consolas, 'Courier New', monospace",  
+  "editor.fontSize": 23, // Adjust the font size as needed
+  "editor.lineHeight": 1.5, // Optional: Adjust line height
+  "editor.fontLigatures": true, // Enable ligatures if supported by the font
+
+ 
+
+  
   "window.zoomLevel": 1.1,
     "files.associations": {
       "iostream": "cpp",
