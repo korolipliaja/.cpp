@@ -1,6 +1,6 @@
 { 
   "editor.fontFamily": "'Cascadia Mono', monospace",
-  "editor.fontSize": 23,
+  "editor.fontSize": 21,
   "editor.fontWeight": "normal",
   "editor.fontLigatures": false,
   "editor.fontVariations": false,
