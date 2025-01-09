@@ -1,11 +1,11 @@
 #include <iostream> 
 using namespace std;
 
-int h = 10;
+int height = 10;
 
 int main(){
-    for(int i = 0; i <= h; i++){
-        for(int j = 0; j < h - i; j++){
+    for(int i = 0; i <= height; i++){
+        for(int j = 0; j < height - i; j++){
             cout << " ";
         }
         cout << "*";
@@ -19,7 +19,5 @@ int main(){
             cout << "*" << '\n';
         }
     }
-
-
     return 0;
 }
