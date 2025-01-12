@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int h = 5;
+    int h = 7;
 
     // Upper part of the diamond
     for (int i = 0; i < h; i++) {
