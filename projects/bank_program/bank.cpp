@@ -43,14 +43,13 @@ do{
 void balanceATM(double balance){
     cout << "Your balance is: " << setprecision(2) << fixed << balance << endl;
 }
-double depozitATM(double balance){
+double depozitATM(){
     double amount = 0;
     cout << "Enter the amout that you want do depozit\n";
     cin >> amount; 
     if(amount < 0){
         cout << "enter a pozitive number\n";
     }
-    
     return amount;
 }
 double witdhrawATM(double balance){
