@@ -10,7 +10,7 @@ double withrawATM(double balance);
 int main(){
 
     int choise = 0;
-    double balance = 101;
+    double balance = 101.21;
 
     
 
@@ -42,7 +42,7 @@ int main(){
 }
 
 void balanceATM(double balance){
-    cout << "your balance is: " << balance << '\n';
+    cout << "your balance is: " << setprecision(2) << fixed << balance << '\n';
 }
 double depozitATM(){
     double amount = 0;
