@@ -1,3 +1,4 @@
+//123123123123
 #include <iostream>
 #include <cmath> // Для sqrt() и round()
 using namespace std;
