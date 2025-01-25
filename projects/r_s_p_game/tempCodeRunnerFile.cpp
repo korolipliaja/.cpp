@@ -1,1 +1,0 @@
-(player == 'r' && computer == 's') 
