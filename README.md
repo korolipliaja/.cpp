@@ -1,4 +1,4 @@
-There is my vscode settings and some beginner projects
+Here is my vscode settings and some beginner projects
 
 Started learning cpp at 2024.12.13 
 
