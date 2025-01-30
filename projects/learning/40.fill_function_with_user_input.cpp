@@ -23,6 +23,5 @@ int main(){
         cout << foods[i] << '\n';
     }
 
-
     return 0;
 }
