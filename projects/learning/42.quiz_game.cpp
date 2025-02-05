@@ -46,7 +46,7 @@ int main(){
     cout << "****RESULT*****" << '\n';
     cout << "correct" << score << '\n';
     cout << "# of questions" << size << '\n';
-    cout << "SCORE: " << (score/(double)size)*100 << "%";
+    cout << "SCORE: " << (score/(double)size)*100 << "%" << '\n';
 
     return 0;
 }
