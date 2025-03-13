@@ -15,7 +15,7 @@ struct Verb {
 std::vector<Verb> verbs = {
     {"arise", "arose", "arisen", "подниматься"},
     {"awake", "awoke", "awoken", "пробуждать"},
-    {"be", "was", "(were)", "been быть"},
+    {"be", "was/where","been", "быть"},
     {"bear", "bore", "born", "рожать, переносить"},
     {"beat", "beat", "beaten", "бить"},
     {"become", "became", "become", "становиться"},
@@ -55,7 +55,7 @@ std::vector<Verb> verbs = {
     {"forget", "forgot", "forgotten", "забывать"},
     {"forgive", "forgave", "forgiven", "прощать"},
     {"freeze", "froze", "frozen", "замораживать"},
-    {"get", "got", "got", "(gotten) получать"},
+    {"get", "got", "got/gotten", "получать"},
     {"give", "gave", "given", "давать"},
     {"go", "went", "gone", "идти"},
     {"grow", "grew", "grown", "расти"},
@@ -70,7 +70,7 @@ std::vector<Verb> verbs = {
     {"know", "knew", "known", "знать"},
     {"lay", "laid", "laid", "класть"},
     {"lead", "led", "led", "вести, лидировать"},
-    {"learn", "learnt", "(learned)", "learnt (learned) учиться, узнавать"},
+    {"learn", "learnt/learned", "learnt/learned" "учиться, узнавать"},
     {"leave", "left", "left", "покидать, оставлять"},
     {"lend", "lent", "lent", "давать взаймы"},
     {"let", "let", "let", "позволять"},
@@ -105,15 +105,13 @@ std::vector<Verb> verbs = {
     {"slide", "slid", "slid", "скользить"},
     {"smell", "smelt", "smelt", "пахнуть, нюхать"},
     {"speak", "spoke", "spoken", "говорить"},
-    {"spell", "spelt", "(spelled)", "spelt (spelled) произносить или писать по"},
-    {"буквам", "", "", ""},
+    {"spell", "spelt/spelled", "spelt/spelled", "произносить или писать по буквам"},
     {"spend", "spent", "spent", "тратить, проводить время"},
-    {"spill", "spilt", "(spilled)", "spilt (spilled) разлить"},
+    {"spill", "spilt/spilled", "spilt/spilled", "разлить"},
     {"spin", "spun", "spun", "крутить"},
     {"split", "split", "split", "разделять, раскалывать"},
-    {"spoil", "spoilt", "(spoiled)", "spoilt (spoiled) портить"},
-    {"spread", "spread", "spread", "разворачивать,"},
-    {"распространять", "", "", ""},
+    {"spoil", "spoilt/spoiled", "spoilt/spoiled", "портить"},
+    {"spread", "spread", "spread", "разворачивать, распространять"},
     {"stand", "stood", "stood", "стоять"},
     {"steal", "stole", "stolen", "воровать"},
     {"sting", "stung", "stung", "жалить"},
@@ -135,7 +133,6 @@ std::vector<Verb> verbs = {
     {"win", "won", "won", "побеждать"},
     {"wind", "wound", "wound", "обматывать, изгибаться"},
     {"write", "wrote", "written", "писать"},
-
 };
 
 void shuffle_verbs() {
@@ -144,13 +141,18 @@ void shuffle_verbs() {
     std::shuffle(verbs.begin(), verbs.end(), g);
 }
 
+void print_progress_bar(int current, int total) {
+    float progress = static_cast<float>(current) / total;
+}
+
 int main() {
     shuffle_verbs();
-    int correct = 0, total = 0;
+    int correct = 0, total = verbs.size();
     std::string past, participle;
     
-    for (const auto& verb : verbs) {
-        std::cout << "    " << verb.base << ":\n";
+    for (size_t i = 0; i < verbs.size(); ++i) {
+        const auto& verb = verbs[i];
+        std::cout << "(" << (i + 1) << "/" << total << ") " << verb.base << ":\n";
         std::cout << "Past Simple: ";
         std::cin >> past;
         std::cout << "Past Participle: ";
@@ -163,15 +165,16 @@ int main() {
         std::transform(correct_participle.begin(), correct_participle.end(), correct_participle.begin(), ::tolower);
 
         if (past == correct_past && participle == correct_participle) {
-            std::cout << "Correct! " << "Translate: " << verb.russian << '\n';
+            std::cout << "Correct! Translate: " << verb.russian << '\n';
             correct++;
         } else {
-            std::cout << "Wrong, Answear is: " << verb.past << " - " << verb.participle << " - " << verb.russian << "\n";
+            std::cout << "Wrong, Answer is: " << verb.past << " - " << verb.participle << " - " << verb.russian << "\n";
         }
-        total++;
+
+        print_progress_bar(i + 1, total);
         std::cout << "------------------------\n";
     }
 
-    std::cout << "Result: " << correct << " from " << total << " Correct answears.\n";
+    std::cout << "Result: " << correct << " from " << total << " Correct answers.\n";
     return 0;
 }
