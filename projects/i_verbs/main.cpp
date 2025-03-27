@@ -165,14 +165,17 @@ int main() {
         std::transform(correct_participle.begin(), correct_participle.end(), correct_participle.begin(), ::tolower);
 
         if (past == correct_past && participle == correct_participle) {
+            std::cout << "--------------------" << '\n';
             std::cout << "Correct! Translate: " << verb.russian << '\n';
+            std::cout << "--------------------" << '\n';
             correct++;
         } else {
+            std::cout << "++++++++++++++++++" << '\n';
             std::cout << "Wrong, Answer is: " << verb.past << " - " << verb.participle << " - " << verb.russian << "\n";
+            std::cout << "++++++++++++++++++" << '\n';
         }
 
         print_progress_bar(i + 1, total);
-        std::cout << "------------------------\n";
     }
 
     std::cout << "Result: " << correct << " from " << total << " Correct answers.\n";
