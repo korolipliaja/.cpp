@@ -1,12 +1,12 @@
 {
   "editor.fontFamily": "Consolas, 'Courier New', monospace",  
-  "editor.fontSize": 22, // Adjust the font size as needed
+  "editor.fontSize": 18, // Adjust the font size as needed
   "editor.lineHeight": 1.5, // Optional: Adjust line height
   "editor.fontLigatures": true, // Enable ligatures if supported by the font
   "vim.handleKeys": {
     "<C-p>": false
   },
-  "window.zoomLevel": 1.1,
+  "window.zoomLevel": 0.8,
   "files.associations": {
     "iostream": "cpp",
     "array": "cpp",
